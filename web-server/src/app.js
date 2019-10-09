@@ -3,6 +3,9 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+const geoCode = require('./utils/geoCode');
+const forecast = require('./utils/forecast');
+
 const app = express();
 
 /* Set paths for express config */
@@ -41,7 +44,33 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-  res.send({ location: 'Gurgaon', forecast: 'It is okay.' });
+  if (!req.query.address) {
+    return res.send({
+      error: 'nolocationGiven',
+      message: 'No location was provided'
+    });
+  }
+  const { address } = req.query;
+
+  geoCode(address, (error, location) => {
+    if (error) {
+      console.log(error);
+      return res.send({ error });
+    }
+
+    forecast(location, (error, forecast) => {
+      if (error) {
+        console.log(error);
+        return res.send({ error });
+      }
+
+      res.send({
+        address,
+        location: location.location,
+        forecast: forecast.summary
+      });
+    });
+  });
 });
 
 app.get('/help/*', (req, res) => {
@@ -50,6 +79,16 @@ app.get('/help/*', (req, res) => {
     author: 'Pankaj Nelson Tirkey',
     errorMessage: 'Help article not found'
   });
+});
+
+app.get('/products', (req, res) => {
+  if (!req.query.search) {
+    return res.send({
+      error: 'noSearchQuery',
+      message: 'No search parameter was provided'
+    });
+  }
+  res.send({ products: [] });
 });
 
 app.get('*', (req, res) => {
