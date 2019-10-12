@@ -15,20 +15,20 @@ weatherForm.addEventListener('submit', e => {
     messageTwo.textContent = '';
     fetch('/weather?address=' + location).then(response => {
       if (response.error) {
-        console.log(response.error);
         messageOne.textContent = 'An error occurred.';
         messageTwo.textContent = response.error;
       } else {
-        response.json().then(forecast => {
-          if (forecast.error) {
-            console.log(forecast.error);
+        response.json().then(data => {
+          if (data.error) {
             messageOne.textContent = 'An error occurred.';
-            messageTwo.textContent = forecast.error;
+            messageTwo.textContent = data.error;
           } else {
-            console.log(forecast.location);
-            console.log(forecast.forecast);
-            messageOne.textContent = forecast.location;
-            messageTwo.textContent = forecast.forecast;
+            const { address, location, forecast } = data;
+            const { current, day } = forecast;
+            messageOne.textContent = location;
+            messageTwo.innerHTML = `
+            <p> Current: ${current.summary} It is ${current.temperature} degrees with ${current.precipProbability}% chance of rain. </p>
+            <p> Day: ${day.summary} </p>`;
           }
         });
       }

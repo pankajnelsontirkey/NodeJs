@@ -16,8 +16,7 @@ const forecast = ({ latitude, longitude }, cb) => {
     } else {
       cb(undefined, {
         current: body.currently,
-        day: body.daily.data[0],
-        summary: body.daily.summary
+        day: { details: body.daily.data[0], summary: body.daily.summary }
       });
     }
   });

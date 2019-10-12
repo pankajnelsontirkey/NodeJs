@@ -58,17 +58,15 @@ app.get('/weather', (req, res) => {
       console.log(error);
       return res.send({ error });
     }
-
-    forecast(location, (error, forecast) => {
+    forecast(location, (error, { current, day }) => {
       if (error) {
         console.log(error);
         return res.send({ error });
       }
-
       res.send({
         address,
         location: location.location,
-        forecast: forecast.summary
+        forecast: { current, day }
       });
     });
   });
