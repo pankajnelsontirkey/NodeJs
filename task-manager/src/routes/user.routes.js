@@ -9,9 +9,26 @@ router.post('/users', async (req, res) => {
 
   try {
     await user.save();
-    res.status(201).send(user);
+    const token = await user.generateAuthToken();
+    res.status(201).send({ user, token });
   } catch (e) {
     res.status(400).send(e);
+  }
+});
+
+router.post('/users/login', async (req, res) => {
+  try {
+    const user = await User.findByCredentials(
+      req.body.email,
+      req.body.password
+    );
+    if (!user) {
+      return res.status(404).send('User not found!');
+    }
+    const token = await user.generateAuthToken();
+    res.send({ user, token });
+  } catch (e) {
+    res.status(400).send({ error: e.message });
   }
 });
 
@@ -50,10 +67,14 @@ router.patch('/users/:id', async (req, res) => {
 
   const { id: _id } = req.params;
   try {
-    const user = await User.findByIdAndUpdate(_id, req.body, {
+    const user = await User.findById(_id);
+    updates.forEach(update => (user[update] = req.body[update]));
+    await user.save();
+
+    /* const user = await User.findByIdAndUpdate(_id, req.body, {
       new: true,
       runValidators: true
-    });
+    }); */
     if (!user) {
       return res.status(404).send('User was not found!');
     }
