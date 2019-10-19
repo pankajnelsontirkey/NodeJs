@@ -1,6 +1,7 @@
 const express = require('express');
 
 const User = require('../models/user');
+const auth = require('../middleware/auth');
 
 const router = new express.Router();
 
@@ -32,14 +33,29 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-router.get('/users', async (req, res) => {
+router.post('/users/logout', auth, async (req, res) => {
   try {
-    const users = await User.find({});
-    res.status(200).send(users);
+    req.user.tokens = req.user.tokens.filter(
+      token => token.token !== req.token
+    );
+    await req.user.save();
+    res.status(200).send('User logged out successfully.');
   } catch (e) {
-    res.status(500).send('Server error!', e);
+    res.status(500).send();
   }
 });
+
+router.post('/users/logoutall', auth, async (req, res) => {
+  try {
+    req.user.tokens = [];
+    await req.user.save();
+    res.send('User logged out of all sessions.');
+  } catch (e) {
+    res.status(500).send();
+  }
+});
+
+router.get('/users/me', auth, async (req, res) => res.send(req.user));
 
 router.get('/users/:id', async (req, res) => {
   const { id: _id } = req.params;
