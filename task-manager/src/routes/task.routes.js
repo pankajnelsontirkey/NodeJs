@@ -15,19 +15,37 @@ router.post('/tasks', auth, async (req, res) => {
   }
 });
 
+// GET /tasks?completed=<true|false>
+// GET /tasks?limit=10&skip=20
+// GET /tasks?sortBy=createdAt:desc
+
 router.get('/tasks', auth, async (req, res) => {
   try {
-    const tasks = await Task.find({ author: req.user._id });
-    if (!tasks.length) {
-      return res.status(404).send({ error: 'No tasks were found!' });
-    }
-    res.status(200).send(tasks);
+    const match = {};
+    const sort = {};
 
-    /* await req.user.populate('tasks').execPopulate();
+    if (req.query.completed) {
+      match.completed = req.query.completed === 'true';
+    }
+    if (req.query.sortBy) {
+      const parts = req.query.sortBy.split(':');
+      sort[parts[0]] = parts[1] === 'desc' ? -1 : 1;
+    }
+    await req.user
+      .populate({
+        path: 'tasks',
+        match,
+        options: {
+          sort,
+          skip: parseInt(req.query.skip),
+          limit: parseInt(req.query.limit)
+        }
+      })
+      .execPopulate();
     if (!req.user.tasks.length) {
       return res.status(404).send({ error: 'No tasks were found!' });
     }
-    res.send(req.user.tasks); */
+    res.send(req.user.tasks);
   } catch (e) {
     res.status(500).send(e);
   }
