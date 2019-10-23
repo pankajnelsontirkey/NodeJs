@@ -4,6 +4,7 @@ const sharp = require('sharp');
 
 const User = require('../models/user');
 const auth = require('../middleware/auth');
+const { sendWelcomeEmail, sendCancellationEmail } = require('../mails/account');
 
 const router = new express.Router();
 const upload = multer({
@@ -28,6 +29,7 @@ router.post('/users', async (req, res) => {
 
   try {
     await user.save();
+    sendWelcomeEmail(user.email, user.name);
     const token = await user.generateAuthToken();
     res.status(201).send({ user, token });
   } catch (e) {
@@ -123,6 +125,7 @@ router.delete('/users/me', auth, async (req, res) => {
 
   try {
     await user.remove();
+    sendCancellationEmail(user.email, user.name);
     res.send(user);
   } catch (e) {
     res.status(500).send(e);
@@ -134,6 +137,7 @@ router.delete('/users/me/avatar', auth, async (req, res) => {
     const { user } = req;
     user.avatar = undefined;
     await user.save();
+
     res.send('User avatar was deleted.');
   } catch (e) {
     res.status(500).send({ error: e.message });
