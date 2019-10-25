@@ -1,30 +1,9 @@
 const request = require('supertest');
-const jwt = require('jsonwebtoken');
-const mongoose = require('mongoose');
 
 const app = require('../src/app');
 const User = require('../src/models/user');
-
-const userOneId = new mongoose.Types.ObjectId();
-
-const userOne = {
-  _id: userOneId,
-  name: 'userOne',
-  email: 'userOne@mail.com',
-  password: 'TestUserOne',
-  tokens: [{ token: jwt.sign({ _id: userOneId }, process.env.JWT_SECRET) }]
-};
-
-const userTwo = {
-  name: 'userTwo',
-  email: 'userTwo@mail.com',
-  password: 'TestUserTwo'
-};
-
-beforeEach(async () => {
-  await User.deleteMany();
-  await new User(userOne).save();
-});
+const { userOne, userOneId, seedDatabase, userTwo } = require('./fixtures/db');
+beforeEach(seedDatabase);
 
 test('Should sign up a new user.', async () => {
   const response = await request(app)
@@ -68,8 +47,8 @@ test('Should fail to login unregistered user', async () => {
   await request(app)
     .post('/users/login')
     .send({
-      email: userTwo.email,
-      password: userTwo.password
+      email: 'failLogin@mail.com',
+      password: 'failLogin'
     })
     .expect(400);
 });
