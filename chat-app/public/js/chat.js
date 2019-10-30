@@ -6,11 +6,18 @@ const $messageFormInput = $messageForm.querySelector('input');
 const $messageFormButton = $messageForm.querySelector('button');
 const $shareLocationButton = document.querySelector('#share-location');
 const $messages = document.querySelector('#messages');
+/* End DOM Elements */
 
 /* Templates */
 const messageTemplate = document.querySelector('#message-template').innerHTML;
 const locationTemplate = document.querySelector('#location-template').innerHTML;
+/* End Templates */
+const { username, room } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true
+});
+/* Options */
 
+/* End Options */
 socket.on('message', message => {
   const html = Mustache.render(messageTemplate, {
     message: message.text,
@@ -67,3 +74,5 @@ $shareLocationButton.addEventListener('click', () => {
     $shareLocationButton.removeAttribute('disabled');
   });
 });
+
+socket.emit('join', { username, room }, error => {});
