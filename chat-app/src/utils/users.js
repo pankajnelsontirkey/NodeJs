@@ -1,5 +1,6 @@
 const users = [];
 
+/* Adds a user to users array and returns the newly added user. */
 const addUser = ({ id, username, room }) => {
   // Clean the data
   username = username.trim().toLowerCase();
@@ -25,6 +26,7 @@ const addUser = ({ id, username, room }) => {
   // Store user
   const user = { id, username, room };
   users.push(user);
+
   return { user };
 };
 

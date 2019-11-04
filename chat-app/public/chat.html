@@ -21,6 +21,8 @@
               type="text"
               placeholder="Type your message here..."
               name="message"
+              required
+              autocomplete="off"
             />
             <button type="submit">SEND</button>
           </form>
@@ -32,7 +34,7 @@
     <script id="message-template" type="text/html">
       <div ckass="message">
         <p>
-          <span class="message__name"> DummyUserName </span>
+          <span class="message__name"> {{username}} </span>
           <span class="message__meta"> {{createdAt}} </span>
         </p>
         <p> {{message}} </p>
@@ -42,7 +44,7 @@
     <script id="location-template" type="text/html">
       <div>
           <p>
-              <span class="message__name"> DummyUserName </span>
+              <span class="message__name"> {{username}} </span>
               <span class="message__meta"> {{createdAt}} </span>
           </p>
         <p>
