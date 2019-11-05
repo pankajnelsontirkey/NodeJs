@@ -11,13 +11,33 @@ const $messages = document.querySelector('#messages');
 /* Templates */
 const messageTemplate = document.querySelector('#message-template').innerHTML;
 const locationTemplate = document.querySelector('#location-template').innerHTML;
+const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML;
 /* End Templates */
+
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 });
-/* Options */
 
-/* End Options */
+const autoscroll = () => {
+  // Find the new message element
+  const $newMessage = $messages.lastElementChild;
+
+  const newMessageStyles = getComputedStyle($newMessage);
+  const newMessageMargin = parseInt(newMessageStyles.marginBottom);
+  // Hieght of the new message
+  const newMessageHeight = $newMessage.offsetHeight + newMessageMargin;
+  // Visible Hieght
+  const visibleHeight = $messages.offsetHeight;
+  // Height of message container
+  const containerHeight = $messages.scrollHeight;
+  // How far have we scrolled
+  const scrollOffset = $messages.scrollTop + visibleHeight;
+
+  if (containerHeight - newMessageHeight <= scrollOffset) {
+    $messages.scrollTop = $messages.scrollHeight;
+  }
+};
+
 socket.on('message', message => {
   const html = Mustache.render(messageTemplate, {
     username: message.username,
@@ -26,6 +46,7 @@ socket.on('message', message => {
   });
 
   $messages.insertAdjacentHTML('beforeend', html);
+  autoscroll();
 });
 
 socket.on('location', url => {
@@ -35,6 +56,15 @@ socket.on('location', url => {
     createdAt: moment(url.createdAt).format('hh:mm a')
   });
   $messages.insertAdjacentHTML('beforeend', html);
+  autoscroll();
+});
+
+socket.on('roomData', ({ room, users }) => {
+  const html = Mustache.render(sidebarTemplate, {
+    room,
+    users
+  });
+  document.querySelector('#sidebar').innerHTML = html;
 });
 
 $messageForm.addEventListener('submit', e => {
@@ -50,7 +80,6 @@ $messageForm.addEventListener('submit', e => {
     if (error) {
       return console.log(error);
     }
-    console.log('The message was delivered!', message);
   });
 });
 
