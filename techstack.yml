@@ -1,0 +1,359 @@
+repo_name: pankajnelsontirkey/NodeJs
+report_id: 57698a94913baf97eb2ff42f736af6aa
+version: 0.1
+repo_type: Public
+timestamp: '2024-01-23T21:54:33+00:00'
+requested_by: pankajnelsontirkey
+provider: github
+branch: master
+detected_tools_count: 23
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs
+  detection_source: Repo Metadata
+- name: Handlebars.js
+  description: Minimal Templating on Steroids
+  website_url: http://handlebarsjs.com/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Templating Languages & Extensions
+  image_url: https://img.stackshare.io/service/1143/Handlebars.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs
+  detection_source: Repo Metadata
+- name: ExpressJS
+  description: Sinatra inspired web development framework for node.js -- insanely
+    fast, flexible, and simple
+  website_url: http://expressjs.com/
+  version: 4.17.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Microframeworks (Backend)
+  image_url: https://img.stackshare.io/service/1163/hashtag.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/chat-app/package-lock.json
+  detection_source: chat-app/package.json
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-12-11 11:18:57.000000000 Z
+- name: MongoDB
+  description: The database for giant ideas
+  website_url: http://www.mongodb.com/
+  version: 3.3.3
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1030/leaf-360x360.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-22 13:56:28.000000000 Z
+- name: Mongoose
+  description: MongoDB object modeling designed to work in an asynchronous environment
+  website_url: http://mongoosejs.com/
+  version: 5.7.6
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Object Document Mapper (ODM)
+  image_url: https://img.stackshare.io/service/1231/0TXzZU7W_400x400.jpg
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-22 13:56:28.000000000 Z
+- name: Socket.IO
+  description: Realtime application framework (Node.JS server)
+  website_url: http://socket.io/
+  version: 2.4.0
+  open_source: true
+  hosted_saas: false
+  category: Application Hosting
+  sub_category: Realtime Backend / API
+  image_url: https://img.stackshare.io/service/1161/vI0ZZlhZ_400x400.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/chat-app/package-lock.json
+  detection_source: chat-app/package.json
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2021-01-21 12:11:18.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs
+  detection_source: Repo Metadata
+- name: Jest
+  description: Painless JavaScript Unit Testing
+  website_url: http://facebook.github.io/jest/
+  version: 23.6.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/830/jest.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-12 11:14:32.000000000 Z
+- name: SuperTest
+  description: 'A library for testing node.js HTTP servers '
+  website_url: https://www.npmjs.com/package/supertest
+  version: 3.4.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/no-img-open-source.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-24 13:36:40.000000000 Z
+- name: nodemon
+  description: A simple monitor script for use during development of a node.js app
+  website_url: http://nodemon.io/
+  version: 1.19.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Monitoring
+  sub_category: node.js Application Monitoring
+  image_url: https://img.stackshare.io/service/5577/preview.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/chat-app/package-lock.json
+  detection_source: chat-app/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-29 14:03:55.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/web-server/package.json
+  detection_source: web-server/package.json
+  last_updated_by: Pankaj Nelson Tirkey
+  last_updated_on: 2019-10-09 08:11:19.000000000 Z
+- name: chalk
+  description: terminal colors
+  website_url: https://github.com/chalk/chalk
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/8072/13122722.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/notes-app/package.json
+  detection_source: notes-app/package.json
+  last_updated_by: Pankaj Nelson Tirkey
+  last_updated_on: 2019-10-04 13:22:19.000000000 Z
+- name: bcryptjs
+  description: Optimized bcrypt in plain JavaScript with zero dependencies
+  package_url: https://www.npmjs.com/bcryptjs
+  version: 2.4.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16857/default_627f05e6a07ce29fc9f119417270f38e8aa5c5e2.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-18 13:49:39.000000000 Z
+- name: chalk
+  description: Terminal string styling done right
+  package_url: https://www.npmjs.com/chalk
+  version: 2.4.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15813/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/chat-app/package-lock.json
+  detection_source: notes-app/package.json
+  last_updated_by: Pankaj Nelson Tirkey
+  last_updated_on: 2019-10-04 13:22:19.000000000 Z
+- name: express
+  description: Fast, unopinionated, minimalist web framework
+  package_url: https://www.npmjs.com/express
+  version: 4.17.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15818/default_db4a7791d2f1174547374b9b587bc10fec088a5a.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/chat-app/package-lock.json
+  detection_source: chat-app/package.json
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-12-11 11:18:57.000000000 Z
+- name: hbs
+  description: Express.js template engine plugin for Handlebars
+  package_url: https://www.npmjs.com/hbs
+  version: 4.0.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17878/default_788839e3786ca1ccd5da69cc550f25d0129fb180.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/web-server/package-lock.json
+  detection_source: web-server/package.json
+  last_updated_by: Pankaj Nelson Tirkey
+  last_updated_on: 2019-10-09 08:11:19.000000000 Z
+  vulnerabilities:
+  - name: Insertion of Sensitive Information into Externally-Accessible File or Directory
+      and Exposure of Sensitive Information to an Unauthorized Actor in hbs
+    cve_id: CVE-2021-32822
+    cve_url: https://github.com/advisories/GHSA-7f5c-rpf4-86p8
+    detected_date: Sep 3
+    severity: moderate
+    first_patched: 
+- name: jsonwebtoken
+  description: JSON Web Token implementation
+  package_url: https://www.npmjs.com/jsonwebtoken
+  version: 8.4.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16155/default_77b54a203c743d16eddb6b6390cba17218454fa0.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-18 13:49:39.000000000 Z
+  vulnerabilities:
+  - name: jsonwebtoken has insecure input validation in jwt.verify function
+    cve_id: CVE-2022-23529
+    cve_url: https://github.com/advisories/GHSA-27h2-hvpr-p74q
+    detected_date: Dec 22
+    severity: high
+    first_patched: 9.0.0
+  - name: 'jsonwebtoken unrestricted key type could lead to legacy keys usage '
+    cve_id: CVE-2022-23539
+    cve_url: https://github.com/advisories/GHSA-8cf7-32gw-wr33
+    detected_date: Dec 22
+    severity: moderate
+    first_patched: 9.0.0
+  - name: jsonwebtoken vulnerable to signature validation bypass due to insecure default
+      algorithm in jwt.verify()
+    cve_id: CVE-2022-23540
+    cve_url: https://github.com/advisories/GHSA-qwph-4952-7xr6
+    detected_date: Dec 22
+    severity: moderate
+    first_patched: 9.0.0
+  - name: jsonwebtoken's insecure implementation of key retrieval function could lead
+      to Forgeable Public/Private Tokens from RSA to HMAC
+    cve_id: CVE-2022-23541
+    cve_url: https://github.com/advisories/GHSA-hjrf-2m68-5959
+    detected_date: Dec 22
+    severity: moderate
+    first_patched: 9.0.0
+- name: multer
+  description: Middleware for handling `multipart/form-data`
+  package_url: https://www.npmjs.com/multer
+  version: 1.4.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16421/default_23e0dabcd0197f0c1f0a41268f8ca3f7e8b1f1e2.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: pankajtirkey
+  last_updated_on: 2019-10-22 13:56:28.000000000 Z
+- name: request
+  description: Simplified HTTP request client
+  package_url: https://www.npmjs.com/request
+  version: 2.88.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15823/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: weather-app/package.json
+  last_updated_by: Pankaj Nelson Tirkey
+  last_updated_on: 2019-10-07 11:52:27.000000000 Z
+  vulnerabilities:
+  - name: Server-Side Request Forgery in Request
+    cve_id: CVE-2023-28155
+    cve_url: https://github.com/advisories/GHSA-p8p7-x288-28g6
+    detected_date: Mar 17
+    severity: moderate
+    first_patched: 
+- name: sharp
+  description: High performance Node.js image processing
+  package_url: https://www.npmjs.com/sharp
+  version: 0.30.5
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16806/default_31a4e0e11d348225088320f3a5c5ea6fa49c27ad.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/task-manager/package-lock.json
+  detection_source: task-manager/package.json
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2022-06-01 23:37:04.000000000 Z
+  vulnerabilities:
+  - name: sharp vulnerability in libwebp dependency CVE-2023-4863
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-54xq-cgqr-rpm3
+    detected_date: Nov 17
+    severity: high
+    first_patched: 0.32.6
+- name: validator
+  description: String validation and sanitization
+  package_url: https://www.npmjs.com/validator
+  version: 13.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16255/default_fef27d1523ac1844fc00e83e47bddd8898ff8a89.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/notes-app/package-lock.json
+  detection_source: notes-app/package.json
+  last_updated_by: dependabot[bot]
+  last_updated_on: 2021-11-03 18:49:34.000000000 Z
+- name: yargs
+  description: Yargs the modern, pirate-themed, successor to optimist
+  package_url: https://www.npmjs.com/yargs
+  version: 12.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15887/default_3af1504b6f77c55205ba630fe08c472f43b95f6e.png
+  detection_source_url: https://github.com/pankajnelsontirkey/NodeJs/blob/master/notes-app/package-lock.json
+  detection_source: notes-app/package.json
+  last_updated_by: Pankaj Nelson Tirkey
+  last_updated_on: 2019-10-04 13:22:19.000000000 Z
